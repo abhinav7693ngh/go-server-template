@@ -64,7 +64,7 @@ func getLogEntryWithoutContext(extraInfo interface{}) LogEntryWithoutCtx {
 
 func getLogWriter(hostname string) zapcore.WriteSyncer {
 	lumberJackLogger := &lumberjack.Logger{
-		Filename: "/var/log/" + hostname + "/vas-backend.log",
+		Filename: "/var/log/" + hostname + "/template.log",
 		Compress: false,
 	}
 	return zapcore.AddSync(lumberJackLogger)

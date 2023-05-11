@@ -33,7 +33,7 @@ func main() {
 
 	if curEnv == "prod" {
 		nrApp, err = newrelic.NewApplication(
-			newrelic.ConfigAppName("vas-backend"),
+			newrelic.ConfigAppName("template"),
 			newrelic.ConfigLicense(os.Getenv("NEW_RELIC_LICENSE_KEY")),
 		)
 		if err != nil {
@@ -45,8 +45,8 @@ func main() {
 	app := fiber.New(fiber.Config{
 		CaseSensitive: true,
 		StrictRouting: true,
-		ServerHeader:  "vas-backend",
-		AppName:       "vas-backend v0.0.0",
+		ServerHeader:  "template",
+		AppName:       "template v0.0.0",
 	})
 
 	app.Use(recover.New())
